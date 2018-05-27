@@ -10,9 +10,12 @@ using System.Windows.Forms;
 
 namespace Parking_CS
 {
-
     public partial class GlowneOkno : Form
     {
+        int wiersze = 4, kolumny = 4,
+            kolumnyOdstep = 20, wierszeOdstep = 20;
+        List<Button> buttons = new List<Button>();
+
         public GlowneOkno()
         {
             InitializeComponent();
@@ -21,105 +24,23 @@ namespace Parking_CS
 
         void CreateButtons()
         {
-            List<Button> buttons = new List<Button>();
-
-            for (int i = 0; i < 10; i++)
+            for (int r = 0; r < wiersze; r++)
             {
-                Location = new Point(100, 200);
+                for (int c = 0; c < kolumny; c++)
+                {
+                    int nr = r * kolumny + c;
+                    Button newButton = new Button();
+                    buttons.Add(newButton);
+                    buttons[nr].BackColor = Color.Aqua;
+                    buttons[nr].Size = new Size(50, 100);
+                    buttons[nr].Location = new Point(wierszeOdstep+ r * 100, kolumnyOdstep+  c * 120);
+                    Controls.Add(newButton);
+                    buttons[nr].BringToFront();
+                }
             }
         }
 
         private void GlowneOkno_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button16_Click(object sender, EventArgs e)
         {
 
         }

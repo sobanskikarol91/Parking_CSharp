@@ -8,6 +8,7 @@ namespace Parking_CS
 {
     class Parking
     {
+        /*
         int rzedy, kolumny, ile_zaparkowanych;
         //Font czcionka;
         //Text ile_zaparkowanych_txt, sr_masa_txt, sr_konie_mechaniczne_txt, sr_predkosc_txt, sr_zuzycie_benzyny_txt;
@@ -36,7 +37,7 @@ namespace Parking_CS
           //  znak_sprite.setTexture(znak_tekstura);
            // znak_sprite.setPosition(900, 0);
         }
-/*
+
         void aktualizuj(RenderWindow* okno)
         {
             for (int i = 0; i < sloty.size(); i++)
@@ -53,7 +54,7 @@ namespace Parking_CS
                 }
             }
         }
-        */
+
         void uaktualnij_statystyki()
         {
             Parametry statystyki;
@@ -155,6 +156,6 @@ namespace Parking_CS
 	// rysujemy znak;
 	target.draw(znak_sprite);
 }
-
-}
+*/
+    }
 }
