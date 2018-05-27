@@ -88,5 +88,14 @@
   <ItemGroup>
     <None Include="grafika\znak.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="grafika\Ciezarowka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="grafika\osobowy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="grafika\Sport.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

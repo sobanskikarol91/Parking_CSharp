@@ -16,28 +16,43 @@ namespace Parking_CS
             kolumnyOdstep = 20, wierszeOdstep = 20;
         List<Button> buttons = new List<Button>();
 
+
+
         public GlowneOkno()
-        {
+        { 
             InitializeComponent();
-            CreateButtons();
+            UtworzPrzyciski();
+            UkryjPanelSamochodow();
         }
 
-        void CreateButtons()
+        void UkryjPanelSamochodow() // panel wyboru samochodow
         {
-            for (int r = 0; r < wiersze; r++)
+            panelSamochodow.Visible = false;
+        }
+
+        void UtworzPrzyciski()
+        {
+            for (int w = 0; w < wiersze; w++)
             {
-                for (int c = 0; c < kolumny; c++)
+                for (int k = 0; k < kolumny; k++)
                 {
-                    int nr = r * kolumny + c;
-                    Button newButton = new Button();
-                    buttons.Add(newButton);
-                    buttons[nr].BackColor = Color.Aqua;
-                    buttons[nr].Size = new Size(50, 100);
-                    buttons[nr].Location = new Point(wierszeOdstep+ r * 100, kolumnyOdstep+  c * 120);
-                    Controls.Add(newButton);
+                    int nr = w * kolumny + k;
+                    Button przycisk = new Button();
+                  //  przycisk.FlatStyle = FlatStyle.Flat; // flat aby nie bylo ramki dookola przycisku
+                    przycisk.BackColor = Color.Black;
+                    przycisk.Size = new Size(50, 100);
+                    przycisk.Location = new Point(wierszeOdstep+ w * 100, kolumnyOdstep+  k * 120);
+                    przycisk.Click += new EventHandler(this.KlikniecieSlotu);
+                    buttons.Add(przycisk);
+                    Controls.Add(przycisk);
                     buttons[nr].BringToFront();
                 }
             }
+        }
+
+        void KlikniecieSlotu(object sender, EventArgs e)
+        {
+            panelSamochodow.Visible = true;
         }
 
         private void GlowneOkno_Load(object sender, EventArgs e)
