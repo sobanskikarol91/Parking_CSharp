@@ -15,8 +15,8 @@ namespace Parking_CS
         int wiersze = 4, kolumny = 4,
             kolumnyOdstep = 20, wierszeOdstep = 20;
         List<Button> buttons = new List<Button>();
-
-
+        Button wybranyPrzycisk; // zapamietujemy jaku przycisk wybral uzytkownik
+        
 
         public GlowneOkno()
         { 
@@ -28,6 +28,22 @@ namespace Parking_CS
         void UkryjPanelSamochodow() // panel wyboru samochodow
         {
             panelSamochodow.Visible = false;
+        }
+
+        private void Sportowy_Click(object sender, EventArgs e)
+        {
+            Form s = new SamochodOkno();
+            s.ShowDialog();
+        }
+
+        private void Ciezarowy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Osobowy_Click(object sender, EventArgs e)
+        {
+
         }
 
         void UtworzPrzyciski()
@@ -52,12 +68,8 @@ namespace Parking_CS
 
         void KlikniecieSlotu(object sender, EventArgs e)
         {
+            wybranyPrzycisk = (Button)sender;  //  zapamietujemy wybrany przycisk
             panelSamochodow.Visible = true;
-        }
-
-        private void GlowneOkno_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

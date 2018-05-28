@@ -65,6 +65,7 @@
             this.Osobowy.Size = new System.Drawing.Size(50, 100);
             this.Osobowy.TabIndex = 0;
             this.Osobowy.UseVisualStyleBackColor = true;
+            this.Osobowy.Click += new System.EventHandler(this.Osobowy_Click);
             // 
             // Ciezarowy
             // 
@@ -74,6 +75,7 @@
             this.Ciezarowy.Size = new System.Drawing.Size(50, 100);
             this.Ciezarowy.TabIndex = 0;
             this.Ciezarowy.UseVisualStyleBackColor = true;
+            this.Ciezarowy.Click += new System.EventHandler(this.Ciezarowy_Click);
             // 
             // Sportowy
             // 
@@ -83,6 +85,7 @@
             this.Sportowy.Size = new System.Drawing.Size(50, 100);
             this.Sportowy.TabIndex = 0;
             this.Sportowy.UseVisualStyleBackColor = true;
+            this.Sportowy.Click += new System.EventHandler(this.Sportowy_Click);
             // 
             // ParkingZnak
             // 
@@ -104,7 +107,6 @@
             this.Controls.Add(this.ParkingZnak);
             this.Name = "GlowneOkno";
             this.Text = "GlowneOkno";
-            this.Load += new System.EventHandler(this.GlowneOkno_Load);
             this.panelSamochodow.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ParkingZnak)).EndInit();
             this.ResumeLayout(false);
