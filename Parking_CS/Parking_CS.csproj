@@ -65,6 +65,12 @@
       <DependentUpon>SamochodOkno.cs</DependentUpon>
     </Compile>
     <Compile Include="Sportowy.cs" />
+    <Compile Include="SportowyOkno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SportowyOkno.Designer.cs">
+      <DependentUpon>SportowyOkno.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GlowneOkno.resx">
       <DependentUpon>GlowneOkno.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,6 +86,9 @@
     </Compile>
     <EmbeddedResource Include="SamochodOkno.resx">
       <DependentUpon>SamochodOkno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SportowyOkno.resx">
+      <DependentUpon>SportowyOkno.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

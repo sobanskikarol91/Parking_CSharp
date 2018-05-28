@@ -16,10 +16,10 @@ namespace Parking_CS
             kolumnyOdstep = 20, wierszeOdstep = 20;
         List<Button> buttons = new List<Button>();
         Button wybranyPrzycisk; // zapamietujemy jaku przycisk wybral uzytkownik
-        
+
 
         public GlowneOkno()
-        { 
+        {
             InitializeComponent();
             UtworzPrzyciski();
             UkryjPanelSamochodow();
@@ -32,18 +32,19 @@ namespace Parking_CS
 
         private void Sportowy_Click(object sender, EventArgs e)
         {
-            Form s = new SamochodOkno();
+            wybranyPrzycisk.Image = ((Button)sender).Image;
+            Form s = new SportowyOkno();
             s.ShowDialog();
         }
 
         private void Ciezarowy_Click(object sender, EventArgs e)
         {
-
+            wybranyPrzycisk.Image = ((Button)sender).Image;
         }
 
         private void Osobowy_Click(object sender, EventArgs e)
         {
-
+            wybranyPrzycisk.Image = ((Button)sender).Image;
         }
 
         void UtworzPrzyciski()
@@ -54,10 +55,10 @@ namespace Parking_CS
                 {
                     int nr = w * kolumny + k;
                     Button przycisk = new Button();
-                  //  przycisk.FlatStyle = FlatStyle.Flat; // flat aby nie bylo ramki dookola przycisku
+                    //  przycisk.FlatStyle = FlatStyle.Flat; // flat aby nie bylo ramki dookola przycisku
                     przycisk.BackColor = Color.Black;
                     przycisk.Size = new Size(50, 100);
-                    przycisk.Location = new Point(wierszeOdstep+ w * 100, kolumnyOdstep+  k * 120);
+                    przycisk.Location = new Point(wierszeOdstep + w * 100, kolumnyOdstep + k * 120);
                     przycisk.Click += new EventHandler(this.KlikniecieSlotu);
                     buttons.Add(przycisk);
                     Controls.Add(przycisk);
