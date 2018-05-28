@@ -22,7 +22,7 @@ namespace Parking_CS
         {
             InitializeComponent();
             UtworzSloty();
-            UkryjPanelSamochodow(false);
+            PokazPanelSamochodow(false);
             napisStatystyki.Font = new Font("Arial", 14, FontStyle.Bold);
             iloscSamochodow.Font = new Font("Arial", 10, FontStyle.Bold);
             sr_masa.Font = new Font("Arial", 10, FontStyle.Bold);
@@ -31,15 +31,19 @@ namespace Parking_CS
             sr_predkosc.Font = new Font("Arial", 10, FontStyle.Bold);
         }
 
-        void UkryjPanelSamochodow(bool pokaz) // panel wyboru samochodow
+        void PokazPanelSamochodow(bool pokaz) // panel wyboru samochodow
         {
             panelSamochodow.Visible = pokaz;
         }
 
         private void Sportowy_Click(object sender, EventArgs e)
         {
-            if (wybranySlot.CzySlotWolny()) Zaparkuj((Button)sender);
-            else Wyparkuj((Button)sender);
+            wybranySlot.Przycisk.Image = ((Button)sender).Image;
+            Form s = new SportowyOkno();
+            s.ShowDialog();
+            wybranySlot.ZajmijSlot(new Sportowy());
+            PokazPanelSamochodow(false);
+            wybranySlot.Przycisk.ForeColor = Color.Black;
         }
 
         private void Ciezarowy_Click(object sender, EventArgs e)
@@ -54,18 +58,14 @@ namespace Parking_CS
 
         void Zaparkuj(Button wybranyRodzajSamochodu)
         {
-            UkryjPanelSamochodow(true);
-            wybranySlot.Przycisk.Image = wybranyRodzajSamochodu.Image;
-            Form s = new SportowyOkno();
-            s.ShowDialog();
-            UkryjPanelSamochodow(false);
-
-            wybranySlot.ZajmijSlot(new Sportowy());
+            // zmiania koloru obwodki
+            PokazPanelSamochodow(true);           
         }
 
         void Wyparkuj(Button wybranyRodzajSamochodu)
         {
-            wybranySlot.Przycisk.ForeColor = Color.Black;
+
+            wybranySlot.Przycisk.Image = null;
             wybranySlot.ZwolnijSlot();
         }
 
@@ -92,10 +92,17 @@ namespace Parking_CS
 
         void KlikniecieSlotu(object sender, EventArgs e)
         {
+            // zapamietaj klikniety slot
             Button przycisk = (Button)sender;
             int nrSlotu = Convert.ToInt32(przycisk.Tag);
             wybranySlot = sloty[nrSlotu];
-            panelSamochodow.Visible = true;
+
+            // zmiania koloru obwodki
+            przycisk.ForeColor = Color.Red;
+            // parkowanie czy wypoarkowanie
+            if (wybranySlot.CzySlotWolny()) Zaparkuj((Button)sender);
+            else Wyparkuj((Button)sender);
+
         }
     }
 }
