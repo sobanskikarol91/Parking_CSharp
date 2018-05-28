@@ -11,6 +11,9 @@ namespace Parking_CS
         int nitro;
         public Sportowy() { }
         public Sportowy(string marka, Parametry parametry) { }
-        public override void StworzSamochod() { }
+        public override void StworzSamochod()
+        {
+
+        }
     }
 }

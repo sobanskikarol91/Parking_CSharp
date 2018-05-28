@@ -70,6 +70,9 @@
     <Compile Include="SamochodOkno.Designer.cs">
       <DependentUpon>SamochodOkno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Slot.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Sportowy.cs" />
     <Compile Include="SportowyOkno.cs">
       <SubType>Form</SubType>

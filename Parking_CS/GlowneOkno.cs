@@ -14,14 +14,14 @@ namespace Parking_CS
     {
         int wiersze = 4, kolumny = 4,
             kolumnyOdstep = 20, wierszeOdstep = 20;
-        List<Button> buttons = new List<Button>();
-        Button wybranyPrzycisk; // zapamietujemy jaku przycisk wybral uzytkownik
 
+        List<Slot> sloty = new List<Slot>();
+        Button wybranyPrzycisk; // zapamietujemy jaku przycisk wybral uzytkownik
 
         public GlowneOkno()
         {
             InitializeComponent();
-            UtworzPrzyciski();
+            UtworzSloty(); 
             UkryjPanelSamochodow();
             napisStatystyki.Font = new Font("Arial", 14, FontStyle.Bold);
             iloscSamochodow.Font = new Font("Arial", 10, FontStyle.Bold);
@@ -29,7 +29,6 @@ namespace Parking_CS
             sr_konie_mech.Font = new Font("Arial", 10, FontStyle.Bold);
             sr_zuz_ben.Font = new Font("Arial", 10, FontStyle.Bold);
             sr_predkosc.Font = new Font("Arial", 10, FontStyle.Bold);
-
         }
 
         void UkryjPanelSamochodow() // panel wyboru samochodow
@@ -54,7 +53,7 @@ namespace Parking_CS
             wybranyPrzycisk.Image = ((Button)sender).Image;
         }
 
-        void UtworzPrzyciski()
+        void UtworzSloty()
         {
             for (int w = 0; w < wiersze; w++)
             {
@@ -62,14 +61,14 @@ namespace Parking_CS
                 {
                     int nr = w * kolumny + k;
                     Button przycisk = new Button();
-                    //  przycisk.FlatStyle = FlatStyle.Flat; // flat aby nie bylo ramki dookola przycisku
+                    przycisk.FlatStyle = FlatStyle.Flat; // flat aby nie bylo ramki dookola przycisku
                     przycisk.BackColor = Color.Black;
                     przycisk.Size = new Size(50, 100);
                     przycisk.Location = new Point(wierszeOdstep + w * 100, kolumnyOdstep + k * 120);
                     przycisk.Click += new EventHandler(this.KlikniecieSlotu);
-                    buttons.Add(przycisk);
+                    przycisk.BringToFront();
+                   // sloty.Add( new Slot(przycisk));
                     Controls.Add(przycisk);
-                    buttons[nr].BringToFront();
                 }
             }
         }

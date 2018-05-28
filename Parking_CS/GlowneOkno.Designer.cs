@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonPanel = new System.Windows.Forms.Panel();
             this.panelSamochodow = new System.Windows.Forms.Panel();
             this.Osobowy = new System.Windows.Forms.Button();
             this.Ciezarowy = new System.Windows.Forms.Button();
@@ -36,23 +35,15 @@
             this.ParkingZnak = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.iloscSamochodow = new System.Windows.Forms.Label();
+            this.sr_konie_mech = new System.Windows.Forms.Label();
+            this.sr_predkosc = new System.Windows.Forms.Label();
+            this.sr_zuz_ben = new System.Windows.Forms.Label();
             this.sr_masa = new System.Windows.Forms.Label();
             this.napisStatystyki = new System.Windows.Forms.Label();
-            this.sr_zuz_ben = new System.Windows.Forms.Label();
-            this.sr_predkosc = new System.Windows.Forms.Label();
-            this.sr_konie_mech = new System.Windows.Forms.Label();
             this.panelSamochodow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ParkingZnak)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // buttonPanel
-            // 
-            this.buttonPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.buttonPanel.Location = new System.Drawing.Point(12, 12);
-            this.buttonPanel.Name = "buttonPanel";
-            this.buttonPanel.Size = new System.Drawing.Size(365, 473);
-            this.buttonPanel.TabIndex = 1;
             // 
             // panelSamochodow
             // 
@@ -67,6 +58,7 @@
             // 
             // Osobowy
             // 
+            this.Osobowy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Osobowy.Image = global::Parking_CS.Properties.Resources.osobowy;
             this.Osobowy.Location = new System.Drawing.Point(130, 20);
             this.Osobowy.Name = "Osobowy";
@@ -77,6 +69,7 @@
             // 
             // Ciezarowy
             // 
+            this.Ciezarowy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Ciezarowy.Image = global::Parking_CS.Properties.Resources.Ciezarowka;
             this.Ciezarowy.Location = new System.Drawing.Point(74, 20);
             this.Ciezarowy.Name = "Ciezarowy";
@@ -87,6 +80,7 @@
             // 
             // Sportowy
             // 
+            this.Sportowy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Sportowy.Image = global::Parking_CS.Properties.Resources.Sport;
             this.Sportowy.Location = new System.Drawing.Point(18, 20);
             this.Sportowy.Name = "Sportowy";
@@ -129,6 +123,39 @@
             this.iloscSamochodow.Text = "Samochody 0/30";
             this.iloscSamochodow.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // sr_konie_mech
+            // 
+            this.sr_konie_mech.AutoSize = true;
+            this.sr_konie_mech.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.sr_konie_mech.Location = new System.Drawing.Point(15, 218);
+            this.sr_konie_mech.Name = "sr_konie_mech";
+            this.sr_konie_mech.Size = new System.Drawing.Size(79, 13);
+            this.sr_konie_mech.TabIndex = 1;
+            this.sr_konie_mech.Text = "sr. konie mech.";
+            this.sr_konie_mech.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sr_predkosc
+            // 
+            this.sr_predkosc.AutoSize = true;
+            this.sr_predkosc.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.sr_predkosc.Location = new System.Drawing.Point(15, 176);
+            this.sr_predkosc.Name = "sr_predkosc";
+            this.sr_predkosc.Size = new System.Drawing.Size(65, 13);
+            this.sr_predkosc.TabIndex = 1;
+            this.sr_predkosc.Text = "sr. predkosc";
+            this.sr_predkosc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sr_zuz_ben
+            // 
+            this.sr_zuz_ben.AutoSize = true;
+            this.sr_zuz_ben.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.sr_zuz_ben.Location = new System.Drawing.Point(15, 135);
+            this.sr_zuz_ben.Name = "sr_zuz_ben";
+            this.sr_zuz_ben.Size = new System.Drawing.Size(69, 13);
+            this.sr_zuz_ben.TabIndex = 1;
+            this.sr_zuz_ben.Text = "sr. zuz. benz.";
+            this.sr_zuz_ben.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // sr_masa
             // 
             this.sr_masa.AutoSize = true;
@@ -151,39 +178,6 @@
             this.napisStatystyki.Text = "Statystyki";
             this.napisStatystyki.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // sr_zuz_ben
-            // 
-            this.sr_zuz_ben.AutoSize = true;
-            this.sr_zuz_ben.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.sr_zuz_ben.Location = new System.Drawing.Point(15, 135);
-            this.sr_zuz_ben.Name = "sr_zuz_ben";
-            this.sr_zuz_ben.Size = new System.Drawing.Size(69, 13);
-            this.sr_zuz_ben.TabIndex = 1;
-            this.sr_zuz_ben.Text = "sr. zuz. benz.";
-            this.sr_zuz_ben.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // sr_predkosc
-            // 
-            this.sr_predkosc.AutoSize = true;
-            this.sr_predkosc.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.sr_predkosc.Location = new System.Drawing.Point(15, 176);
-            this.sr_predkosc.Name = "sr_predkosc";
-            this.sr_predkosc.Size = new System.Drawing.Size(65, 13);
-            this.sr_predkosc.TabIndex = 1;
-            this.sr_predkosc.Text = "sr. predkosc";
-            this.sr_predkosc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // sr_konie_mech
-            // 
-            this.sr_konie_mech.AutoSize = true;
-            this.sr_konie_mech.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.sr_konie_mech.Location = new System.Drawing.Point(15, 218);
-            this.sr_konie_mech.Name = "sr_konie_mech";
-            this.sr_konie_mech.Size = new System.Drawing.Size(79, 13);
-            this.sr_konie_mech.TabIndex = 1;
-            this.sr_konie_mech.Text = "sr. konie mech.";
-            this.sr_konie_mech.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // GlowneOkno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,7 +186,6 @@
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSamochodow);
-            this.Controls.Add(this.buttonPanel);
             this.Controls.Add(this.ParkingZnak);
             this.Name = "GlowneOkno";
             this.Text = "GlowneOkno";
@@ -207,7 +200,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox ParkingZnak;
-        private System.Windows.Forms.Panel buttonPanel;
         private System.Windows.Forms.Panel panelSamochodow;
         private System.Windows.Forms.Button Sportowy;
         private System.Windows.Forms.Button Osobowy;
