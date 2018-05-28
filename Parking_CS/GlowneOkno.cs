@@ -23,6 +23,13 @@ namespace Parking_CS
             InitializeComponent();
             UtworzPrzyciski();
             UkryjPanelSamochodow();
+            napisStatystyki.Font = new Font("Arial", 14, FontStyle.Bold);
+            iloscSamochodow.Font = new Font("Arial", 10, FontStyle.Bold);
+            sr_masa.Font = new Font("Arial", 10, FontStyle.Bold);
+            sr_konie_mech.Font = new Font("Arial", 10, FontStyle.Bold);
+            sr_zuz_ben.Font = new Font("Arial", 10, FontStyle.Bold);
+            sr_predkosc.Font = new Font("Arial", 10, FontStyle.Bold);
+
         }
 
         void UkryjPanelSamochodow() // panel wyboru samochodow

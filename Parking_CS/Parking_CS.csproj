@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ciezarowy.cs" />
+    <Compile Include="CiezarowyOkno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CiezarowyOkno.Designer.cs">
+      <DependentUpon>CiezarowyOkno.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlowneOkno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     <Compile Include="SportowyOkno.Designer.cs">
       <DependentUpon>SportowyOkno.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CiezarowyOkno.resx">
+      <DependentUpon>CiezarowyOkno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GlowneOkno.resx">
       <DependentUpon>GlowneOkno.cs</DependentUpon>
     </EmbeddedResource>
