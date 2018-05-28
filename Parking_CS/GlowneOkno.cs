@@ -16,13 +16,13 @@ namespace Parking_CS
             kolumnyOdstep = 20, wierszeOdstep = 20;
 
         List<Slot> sloty = new List<Slot>();
-        Button wybranyPrzycisk; // zapamietujemy jaku przycisk wybral uzytkownik
+        Slot wybranySlot; // zapamietujemy jaki przycisk wybral uzytkownik
 
         public GlowneOkno()
         {
             InitializeComponent();
-            UtworzSloty(); 
-            UkryjPanelSamochodow();
+            UtworzSloty();
+            UkryjPanelSamochodow(false);
             napisStatystyki.Font = new Font("Arial", 14, FontStyle.Bold);
             iloscSamochodow.Font = new Font("Arial", 10, FontStyle.Bold);
             sr_masa.Font = new Font("Arial", 10, FontStyle.Bold);
@@ -31,26 +31,42 @@ namespace Parking_CS
             sr_predkosc.Font = new Font("Arial", 10, FontStyle.Bold);
         }
 
-        void UkryjPanelSamochodow() // panel wyboru samochodow
+        void UkryjPanelSamochodow(bool pokaz) // panel wyboru samochodow
         {
-            panelSamochodow.Visible = false;
+            panelSamochodow.Visible = pokaz;
         }
 
         private void Sportowy_Click(object sender, EventArgs e)
         {
-            wybranyPrzycisk.Image = ((Button)sender).Image;
-            Form s = new SportowyOkno();
-            s.ShowDialog();
+            if (wybranySlot.CzySlotWolny()) Zaparkuj((Button)sender);
+            else Wyparkuj((Button)sender);
         }
 
         private void Ciezarowy_Click(object sender, EventArgs e)
         {
-            wybranyPrzycisk.Image = ((Button)sender).Image;
+
         }
 
         private void Osobowy_Click(object sender, EventArgs e)
         {
-            wybranyPrzycisk.Image = ((Button)sender).Image;
+
+        }
+
+        void Zaparkuj(Button wybranyRodzajSamochodu)
+        {
+            UkryjPanelSamochodow(true);
+            wybranySlot.Przycisk.Image = wybranyRodzajSamochodu.Image;
+            Form s = new SportowyOkno();
+            s.ShowDialog();
+            UkryjPanelSamochodow(false);
+
+            wybranySlot.ZajmijSlot(new Sportowy());
+        }
+
+        void Wyparkuj(Button wybranyRodzajSamochodu)
+        {
+            wybranySlot.Przycisk.ForeColor = Color.Black;
+            wybranySlot.ZwolnijSlot();
         }
 
         void UtworzSloty()
@@ -67,7 +83,8 @@ namespace Parking_CS
                     przycisk.Location = new Point(wierszeOdstep + w * 100, kolumnyOdstep + k * 120);
                     przycisk.Click += new EventHandler(this.KlikniecieSlotu);
                     przycisk.BringToFront();
-                   // sloty.Add( new Slot(przycisk));
+                    przycisk.Tag = nr;  // zapamietujemy nr aby pozniej szybko znalezc przycisk na liscie slotow
+                    sloty.Add(new Slot(przycisk));
                     Controls.Add(przycisk);
                 }
             }
@@ -75,7 +92,9 @@ namespace Parking_CS
 
         void KlikniecieSlotu(object sender, EventArgs e)
         {
-            wybranyPrzycisk = (Button)sender;  //  zapamietujemy wybrany przycisk
+            Button przycisk = (Button)sender;
+            int nrSlotu = Convert.ToInt32(przycisk.Tag);
+            wybranySlot = sloty[nrSlotu];
             panelSamochodow.Visible = true;
         }
     }

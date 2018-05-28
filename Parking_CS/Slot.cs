@@ -12,9 +12,13 @@ namespace Parking_CS
 {
     class Slot : Form
     {
-        public Slot(Button przycisk) { this.przycisk = przycisk; przycisk = new Button(); }
-        public Samochod Samochod { get; set; }
+        bool wolny = true;
+        public Samochod Samochod { get; private set; }
+        public Slot(Button przycisk) { this.Przycisk = przycisk; przycisk = new Button(); }
 
-        Button przycisk;
+        public Button Przycisk { get; }
+        public void ZwolnijSlot() { Samochod = null; wolny = true; }
+        public bool CzySlotWolny() { return wolny; }
+        public void ZajmijSlot(Samochod samochod) { this.Samochod = samochod; wolny = false; }
     }
 }
