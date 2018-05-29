@@ -13,8 +13,15 @@ namespace Parking_CS
         int Predkosc { get; }
         int Zuzycie_benzyny { get; }
 
-        Parametry() { }
-        Parametry(int masa, int predkosc, int zurzycie_benzyny, int konie_mechaniczne)
+        public Parametry() { }
+        public Parametry(int masa, int predkosc, int zurzycie_benzyny, int konie_mechaniczne)
         { Masa = masa; Predkosc = predkosc; Zuzycie_benzyny = zurzycie_benzyny; Konie_mechaniczne = konie_mechaniczne; }
+
+        // przeciazenie operatora
+        public static Parametry operator +(Parametry a, Parametry b)
+        {
+            return new Parametry(a.Masa + b.Masa, a.Predkosc + b.Predkosc,
+                a.Zuzycie_benzyny + b.Zuzycie_benzyny, a.Konie_mechaniczne + b.Konie_mechaniczne);
+        }
     }
 }

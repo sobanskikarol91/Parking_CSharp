@@ -189,6 +189,7 @@
             this.Controls.Add(this.ParkingZnak);
             this.Name = "GlowneOkno";
             this.Text = "GlowneOkno";
+            this.Load += new System.EventHandler(this.GlowneOkno_Load);
             this.panelSamochodow.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ParkingZnak)).EndInit();
             this.panel1.ResumeLayout(false);

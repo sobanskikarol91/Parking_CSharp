@@ -17,6 +17,7 @@ namespace Parking_CS
 
         List<Slot> sloty = new List<Slot>();
         Slot wybranySlot; // zapamietujemy jaki przycisk wybral uzytkownik
+        int ileZaparkowanych;
 
         public GlowneOkno()
         {
@@ -59,14 +60,20 @@ namespace Parking_CS
         void Zaparkuj(Button wybranyRodzajSamochodu)
         {
             // zmiania koloru obwodki
-            PokazPanelSamochodow(true);           
+            PokazPanelSamochodow(true);
+            ileZaparkowanych++;
+        }
+
+        private void GlowneOkno_Load(object sender, EventArgs e)
+        {
+
         }
 
         void Wyparkuj(Button wybranyRodzajSamochodu)
         {
-
             wybranySlot.Przycisk.Image = null;
             wybranySlot.ZwolnijSlot();
+            ileZaparkowanych--;
         }
 
         void UtworzSloty()
@@ -102,7 +109,30 @@ namespace Parking_CS
             // parkowanie czy wypoarkowanie
             if (wybranySlot.CzySlotWolny()) Zaparkuj((Button)sender);
             else Wyparkuj((Button)sender);
+        }
 
+        void UaktualnijStatystyki()
+        {
+            Parametry statystyki = new Parametry();
+
+            // dodajemy wszystkie parametry samochodow do siebie
+            for (int i = 0; i < sloty.Count; i++)
+                if (sloty[i].CzySlotWolny()) // jezeli jest zajetyp rzez samochod do dodajemy parametry
+                    statystyki += sloty[i].Samochod.Parametry;
+
+            if (ileZaparkowanych > 0)
+                statystyki /= ileZaparkowanych;
+
+            .setString(
+                "zaparkowane samochody: " + to_string(ileZaparkowanych) + "/" + to_string(sloty.size()));
+            sr_masa_txt.setString(
+                "Sr. masa: " + to_string(statystyki.get_masa()));
+            sr_predkosc_txt.setString(
+                "Sr. predkosc: " + to_string(statystyki.get_predkosc()));
+            sr_konie_mechaniczne_txt.setString(
+                "Sr. km: " + to_string(statystyki.get_km()));
+            sr_zuzycie_benzyny_txt.setString(
+                "Sr. zuz. benz.: " + to_string(statystyki.get_zurz_benz()));
         }
     }
 }

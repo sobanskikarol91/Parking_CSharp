@@ -38,6 +38,8 @@
             this.zuzucieBenzyny = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.predkosc = new System.Windows.Forms.Label();
+            this.ok = new System.Windows.Forms.Button();
+            this.exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -109,12 +111,32 @@
             this.predkosc.TabIndex = 1;
             this.predkosc.Text = "Predkosc";
             // 
+            // ok
+            // 
+            this.ok.Location = new System.Drawing.Point(197, 25);
+            this.ok.Name = "ok";
+            this.ok.Size = new System.Drawing.Size(75, 23);
+            this.ok.TabIndex = 3;
+            this.ok.Text = "Ok";
+            this.ok.UseVisualStyleBackColor = true;
+            // 
+            // exit
+            // 
+            this.exit.Location = new System.Drawing.Point(197, 68);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(75, 23);
+            this.exit.TabIndex = 3;
+            this.exit.Text = "Exit";
+            this.exit.UseVisualStyleBackColor = true;
+            // 
             // SamochodOkno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(234, 261);
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.exit);
+            this.Controls.Add(this.ok);
             this.Controls.Add(this.predkosc);
             this.Controls.Add(this.zuzucieBenzyny);
             this.Controls.Add(this.konieMech);
@@ -142,5 +164,7 @@
         private System.Windows.Forms.Label zuzucieBenzyny;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label predkosc;
+        private System.Windows.Forms.Button ok;
+        private System.Windows.Forms.Button exit;
     }
 }

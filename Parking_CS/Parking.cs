@@ -8,6 +8,8 @@ namespace Parking_CS
 {
     class Parking
     {
+        Parametry parametry;
+
         /*
         int rzedy, kolumny, ile_zaparkowanych;
         //Font czcionka;
