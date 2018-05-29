@@ -45,28 +45,30 @@ namespace Parking_CS
 
         private void Sportowy_Click(object sender, EventArgs e)
         {
-            wybranySlot.Przycisk.Image = ((Button)sender).Image;
-            Form s = new SportowyOkno();
-            s.ShowDialog();
-            wybranySlot.ZajmijSlot(new Sportowy());
-            PokazPanelSamochodow(false);
-            wybranySlot.Przycisk.ForeColor = Color.Black;
+            Zaparkuj(sender, new Sportowy());
         }
 
         private void Ciezarowy_Click(object sender, EventArgs e)
         {
-
+            Zaparkuj(sender, new Ciezarowy());
         }
 
         private void Osobowy_Click(object sender, EventArgs e)
         {
-
+            Zaparkuj(sender, new Osobowy());
         }
 
-        void Zaparkuj(Button wybranyRodzajSamochodu)
+        void Zaparkuj(object sender, Samochod wybranySamochod)
         {
-            // zmiania koloru obwodki
-            PokazPanelSamochodow(true);
+          
+            wybranySlot.Przycisk.Image =((Button)sender).Image; 
+
+            wybranySlot.ZajmijSlot(wybranySamochod);
+            wybranySlot.Samochod.StworzSamochod();
+
+            PokazPanelSamochodow(false);
+            // wygaszamy czerwone podswietlenie przycisku
+            wybranySlot.Przycisk.ForeColor = Color.Black;
             ileZaparkowanych++;
             UaktualnijStatystyki();
         }
@@ -115,11 +117,14 @@ namespace Parking_CS
             Button przycisk = (Button)sender;
             int nrSlotu = Convert.ToInt32(przycisk.Tag);
             wybranySlot = sloty[nrSlotu];
-
-            // zmiania koloru obwodki
-            przycisk.ForeColor = Color.Red;
-            // parkowanie czy wypoarkowanie
-            if (wybranySlot.CzySlotWolny()) Zaparkuj((Button)sender);
+            
+            // parkowanie czy  pokazanie panelu wyboru samochodow
+            if (wybranySlot.CzySlotWolny())
+            {
+                // zmiania koloru obwodki
+                przycisk.ForeColor = Color.Red;
+                PokazPanelSamochodow(true);
+            }
             else Wyparkuj((Button)sender);
         }
 

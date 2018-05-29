@@ -17,6 +17,11 @@ namespace Parking_CS
             InitializeComponent();
         }
 
+        public SportowyOkno(Parametry a)
+        {
+
+        }
+
         private void SportowyOkno_Load(object sender, EventArgs e)
         {
             nitro.Font = new Font("Arial", 10, FontStyle.Bold);

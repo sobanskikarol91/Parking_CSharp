@@ -13,7 +13,8 @@ namespace Parking_CS
         public Sportowy(string marka, Parametry parametry) { }
         public override void StworzSamochod()
         {
-
+            SportowyOkno  s = new SportowyOkno();
+            s.ShowDialog();
         }
     }
 }
