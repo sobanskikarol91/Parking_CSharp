@@ -68,6 +68,7 @@ namespace Parking_CS
             // zmiania koloru obwodki
             PokazPanelSamochodow(true);
             ileZaparkowanych++;
+            UaktualnijStatystyki();
         }
 
         private void GlowneOkno_Load(object sender, EventArgs e)
@@ -80,6 +81,7 @@ namespace Parking_CS
             wybranySlot.Przycisk.Image = null;
             wybranySlot.ZwolnijSlot();
             ileZaparkowanych--;
+            UaktualnijStatystyki();
         }
 
         void UtworzSloty()
@@ -105,6 +107,10 @@ namespace Parking_CS
 
         void KlikniecieSlotu(object sender, EventArgs e)
         {
+            // odznaczamy czerwona obwodke wczesniej przycisnietego przycisku
+            if (wybranySlot != null)
+                wybranySlot.Przycisk.ForeColor = Color.Black;
+
             // zapamietaj klikniety slot
             Button przycisk = (Button)sender;
             int nrSlotu = Convert.ToInt32(przycisk.Tag);
@@ -132,7 +138,7 @@ namespace Parking_CS
             ileZaparkowanychTxt.Text = "zaparkowane samochody: " + ileZaparkowanych + "/" + sloty.Count;
             masaTxt.Text = "Sr. masa: " + statystyki.Masa;
             predkoscTxt.Text = "Sr. predkosc: " + statystyki.Predkosc;
-            konieMechTxt.Text = "Sr. km: " + statystyki.Konie_mechaniczne;
+            konieMechTxt.Text = "Sr. kon. mech.: " + statystyki.Konie_mechaniczne;
             zuzBenTxt.Text = "Sr. zuz. benz.: " + statystyki.Zuzycie_benzyny;
         }
     }

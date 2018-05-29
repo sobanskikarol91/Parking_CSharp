@@ -37,9 +37,9 @@
             this.nitro.AutoSize = true;
             this.nitro.Location = new System.Drawing.Point(12, 197);
             this.nitro.Name = "nitro";
-            this.nitro.Size = new System.Drawing.Size(27, 13);
+            this.nitro.Size = new System.Drawing.Size(29, 13);
             this.nitro.TabIndex = 2;
-            this.nitro.Text = "nitro";
+            this.nitro.Text = "Nitro";
             // 
             // textBox5
             // 
