@@ -24,12 +24,18 @@ namespace Parking_CS
             InitializeComponent();
             UtworzSloty();
             PokazPanelSamochodow(false);
+            UstawNapisy();
+            UaktualnijStatystyki();
+        }
+
+        void UstawNapisy()
+        {
             napisStatystyki.Font = new Font("Arial", 14, FontStyle.Bold);
-            iloscSamochodow.Font = new Font("Arial", 10, FontStyle.Bold);
-            sr_masa.Font = new Font("Arial", 10, FontStyle.Bold);
-            sr_konie_mech.Font = new Font("Arial", 10, FontStyle.Bold);
-            sr_zuz_ben.Font = new Font("Arial", 10, FontStyle.Bold);
-            sr_predkosc.Font = new Font("Arial", 10, FontStyle.Bold);
+            ileZaparkowanychTxt.Font = new Font("Arial", 10, FontStyle.Bold);
+            masaTxt.Font = new Font("Arial", 10, FontStyle.Bold);
+            konieMechTxt.Font = new Font("Arial", 10, FontStyle.Bold);
+            zuzBenTxt.Font = new Font("Arial", 10, FontStyle.Bold);
+            predkoscTxt.Font = new Font("Arial", 10, FontStyle.Bold);
         }
 
         void PokazPanelSamochodow(bool pokaz) // panel wyboru samochodow
@@ -117,22 +123,17 @@ namespace Parking_CS
 
             // dodajemy wszystkie parametry samochodow do siebie
             for (int i = 0; i < sloty.Count; i++)
-                if (sloty[i].CzySlotWolny()) // jezeli jest zajetyp rzez samochod do dodajemy parametry
+                if (!sloty[i].CzySlotWolny()) // jezeli jest zajetyp rzez samochod do dodajemy parametry
                     statystyki += sloty[i].Samochod.Parametry;
 
             if (ileZaparkowanych > 0)
                 statystyki /= ileZaparkowanych;
 
-            .setString(
-                "zaparkowane samochody: " + to_string(ileZaparkowanych) + "/" + to_string(sloty.size()));
-            sr_masa_txt.setString(
-                "Sr. masa: " + to_string(statystyki.get_masa()));
-            sr_predkosc_txt.setString(
-                "Sr. predkosc: " + to_string(statystyki.get_predkosc()));
-            sr_konie_mechaniczne_txt.setString(
-                "Sr. km: " + to_string(statystyki.get_km()));
-            sr_zuzycie_benzyny_txt.setString(
-                "Sr. zuz. benz.: " + to_string(statystyki.get_zurz_benz()));
+            ileZaparkowanychTxt.Text = "zaparkowane samochody: " + ileZaparkowanych + "/" + sloty.Count;
+            masaTxt.Text = "Sr. masa: " + statystyki.Masa;
+            predkoscTxt.Text = "Sr. predkosc: " + statystyki.Predkosc;
+            konieMechTxt.Text = "Sr. km: " + statystyki.Konie_mechaniczne;
+            zuzBenTxt.Text = "Sr. zuz. benz.: " + statystyki.Zuzycie_benzyny;
         }
     }
 }
