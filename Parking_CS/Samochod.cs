@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Parking_CS
@@ -22,18 +16,23 @@ namespace Parking_CS
 
         public void StworzSamochod()
         {
+            // wyswietlenie okna wprowadzania danych
             ShowDialog();
         }
 
         private void okBTN_Click(object sender, EventArgs e)
         {
+            // zpisanie danych przy kliknieciu przycisku ok
             ZapiszDane();
+            // zamkniecie okna
             Close();
         }
 
-        // zapisujemy dane wprowadzone w oknie tworzenia samochodu
+        // zapisujemy dane wprowadzone w oknie tworzenia samochodu, 
+        // metoda jest virtualna poniewaz inne klasy beda implementowac ja inaczej.
         protected virtual void ZapiszDane()
         {
+            // konwertujemy dane przechowywane w text boxach i za pomoca konstruktora Parametry przypisujemy nowy obiekt
             Parametry = new Parametry(
                 Convert.ToInt32(masaTB.Text),
                 Convert.ToInt32(predkoscTB.Text),

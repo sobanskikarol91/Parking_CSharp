@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Parking_CS
@@ -25,18 +19,7 @@ namespace Parking_CS
             InitializeComponent();
             UtworzSloty();
             PokazPanelSamochodow(false);
-            UstawNapisy();
             UaktualnijStatystyki();
-        }
-
-        void UstawNapisy()
-        {
-            napisStatystyki.Font = new Font("Arial", 14, FontStyle.Bold);
-            ileZaparkowanychTxt.Font = new Font("Arial", 10, FontStyle.Bold);
-            masaTxt.Font = new Font("Arial", 10, FontStyle.Bold);
-            konieMechTxt.Font = new Font("Arial", 10, FontStyle.Bold);
-            zuzBenTxt.Font = new Font("Arial", 10, FontStyle.Bold);
-            predkoscTxt.Font = new Font("Arial", 10, FontStyle.Bold);
         }
 
         void PokazPanelSamochodow(bool pokaz) // panel wyboru samochodow
@@ -75,7 +58,13 @@ namespace Parking_CS
 
         private void GlowneOkno_Load(object sender, EventArgs e)
         {
-
+            // ustawienie napisow przy wczytywaniu okna
+            napisStatystyki.Font = new Font("Arial", 14, FontStyle.Bold);
+            ileZaparkowanychTxt.Font = new Font("Arial", 10, FontStyle.Bold);
+            masaTxt.Font = new Font("Arial", 10, FontStyle.Bold);
+            konieMechTxt.Font = new Font("Arial", 10, FontStyle.Bold);
+            zuzBenTxt.Font = new Font("Arial", 10, FontStyle.Bold);
+            predkoscTxt.Font = new Font("Arial", 10, FontStyle.Bold);
         }
 
         void Wyparkuj(Button wybranyRodzajSamochodu)
@@ -98,6 +87,7 @@ namespace Parking_CS
                     przycisk.BackColor = Color.Black;
                     przycisk.Size = new Size(50, 100);
                     przycisk.Location = new Point(wierszeOdstep + w * 100, kolumnyOdstep + k * 120);
+                    // dodanie eventu jaki nastapi w przypadku klikniecia przycisku
                     przycisk.Click += new EventHandler(this.KlikniecieSlotu);
                     przycisk.BringToFront();
                     przycisk.Tag = nr;  // zapamietujemy nr aby pozniej szybko znalezc przycisk na liscie slotow
@@ -118,7 +108,7 @@ namespace Parking_CS
             int nrSlotu = Convert.ToInt32(przycisk.Tag);
             wybranySlot = sloty[nrSlotu];
             
-            // parkowanie czy  pokazanie panelu wyboru samochodow
+            // parkowanie czy pokazanie panelu wyboru samochodow
             if (wybranySlot.CzySlotWolny())
             {
                 // zmiania koloru obwodki
@@ -134,11 +124,8 @@ namespace Parking_CS
 
             // dodajemy wszystkie parametry samochodow do siebie
             for (int i = 0; i < sloty.Count; i++)
-                if (!sloty[i].CzySlotWolny()) // jezeli jest zajetyp rzez samochod do dodajemy parametry
-                {
-                    Debug.WriteLine("Masa: " + sloty[i].Samochod.Parametry.Masa);
+                if (!sloty[i].CzySlotWolny()) // jezeli jest zajety przez samochod do dodajemy parametry
                     statystyki += sloty[i].Samochod.Parametry;
-                }
 
             if (ileZaparkowanych > 0)
                 statystyki /= ileZaparkowanych;
