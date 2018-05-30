@@ -1,20 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Parking_CS
 {
-    class Sportowy : Samochod
+    public partial class Sportowy : Samochod
     {
-        int nitro;
-        public Sportowy() { }
-        public Sportowy(string marka, Parametry parametry) { }
-        public override void StworzSamochod()
+        public int Nitro { get; private set; }
+
+        public Sportowy() : base()
         {
-            SportowyOkno  s = new SportowyOkno();
-            s.ShowDialog();
+            Nitro = 0;
+            InitializeComponent();
+        }
+
+        private void Sportowy_Load(object sender, EventArgs e)
+        {
+            this.nitroTxt.Font = new System.Drawing.Font("Arial", 10, FontStyle.Bold);
+        }
+
+        protected virtual void ZapiszDane()
+        {
+            base.ZapiszDane();
+            Nitro = Convert.ToInt32(nitroTB.Text);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -50,17 +51,16 @@ namespace Parking_CS
 
         private void Ciezarowy_Click(object sender, EventArgs e)
         {
-            Zaparkuj(sender, new Ciezarowy());
+            //Zaparkuj(sender, new Ciezarowy());
         }
 
         private void Osobowy_Click(object sender, EventArgs e)
         {
-            Zaparkuj(sender, new Osobowy());
+           // Zaparkuj(sender, new Osobowy());
         }
 
         void Zaparkuj(object sender, Samochod wybranySamochod)
-        {
-          
+        {          
             wybranySlot.Przycisk.Image =((Button)sender).Image; 
 
             wybranySlot.ZajmijSlot(wybranySamochod);
@@ -135,7 +135,10 @@ namespace Parking_CS
             // dodajemy wszystkie parametry samochodow do siebie
             for (int i = 0; i < sloty.Count; i++)
                 if (!sloty[i].CzySlotWolny()) // jezeli jest zajetyp rzez samochod do dodajemy parametry
+                {
+                    Debug.WriteLine("Masa: " + sloty[i].Samochod.Parametry.Masa);
                     statystyki += sloty[i].Samochod.Parametry;
+                }
 
             if (ileZaparkowanych > 0)
                 statystyki /= ileZaparkowanych;

@@ -45,12 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ciezarowy.cs" />
-    <Compile Include="CiezarowyOkno.cs">
+    <Compile Include="Ciezarowy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CiezarowyOkno.Designer.cs">
-      <DependentUpon>CiezarowyOkno.cs</DependentUpon>
+    <Compile Include="Ciezarowy.Designer.cs">
+      <DependentUpon>Ciezarowy.cs</DependentUpon>
     </Compile>
     <Compile Include="GlowneOkno.cs">
       <SubType>Form</SubType>
@@ -58,42 +57,30 @@
     <Compile Include="GlowneOkno.Designer.cs">
       <DependentUpon>GlowneOkno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Osobowy.cs" />
-    <Compile Include="OsobowyOkno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OsobowyOkno.Designer.cs">
-      <DependentUpon>OsobowyOkno.cs</DependentUpon>
-    </Compile>
     <Compile Include="Parametry.cs" />
     <Compile Include="Parking.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Samochod.cs" />
-    <Compile Include="SamochodOkno.cs">
+    <Compile Include="Samochod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SamochodOkno.Designer.cs">
-      <DependentUpon>SamochodOkno.cs</DependentUpon>
+    <Compile Include="Samochod.Designer.cs">
+      <DependentUpon>Samochod.cs</DependentUpon>
     </Compile>
     <Compile Include="Slot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sportowy.cs" />
-    <Compile Include="SportowyOkno.cs">
+    <Compile Include="Sportowy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SportowyOkno.Designer.cs">
-      <DependentUpon>SportowyOkno.cs</DependentUpon>
+    <Compile Include="Sportowy.Designer.cs">
+      <DependentUpon>Sportowy.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CiezarowyOkno.resx">
-      <DependentUpon>CiezarowyOkno.cs</DependentUpon>
+    <EmbeddedResource Include="Ciezarowy.resx">
+      <DependentUpon>Ciezarowy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GlowneOkno.resx">
       <DependentUpon>GlowneOkno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OsobowyOkno.resx">
-      <DependentUpon>OsobowyOkno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -105,11 +92,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SamochodOkno.resx">
-      <DependentUpon>SamochodOkno.cs</DependentUpon>
+    <EmbeddedResource Include="Samochod.resx">
+      <DependentUpon>Samochod.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SportowyOkno.resx">
-      <DependentUpon>SportowyOkno.cs</DependentUpon>
+    <EmbeddedResource Include="Sportowy.resx">
+      <DependentUpon>Sportowy.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

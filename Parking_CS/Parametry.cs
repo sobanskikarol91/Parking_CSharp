@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Parking_CS
 {
-    class Parametry
+   public class Parametry
     {
-        public int Masa { get; }
+        public int Masa { get;  }
         public int Konie_mechaniczne { get; }
         public int Predkosc { get; }
-        public int Zuzycie_benzyny { get; }
+        public int Zuzycie_benzyny { get;  }
 
         public Parametry() { Masa = 0; Konie_mechaniczne = 0; Predkosc = 0; Zuzycie_benzyny = 0;} // ustawiamy wszystko na 0
         public Parametry(int masa, int predkosc, int zurzycie_benzyny, int konie_mechaniczne)
