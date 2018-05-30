@@ -51,12 +51,12 @@ namespace Parking_CS
 
         private void Ciezarowy_Click(object sender, EventArgs e)
         {
-            //Zaparkuj(sender, new Ciezarowy());
+            Zaparkuj(sender, new Ciezarowy());
         }
 
         private void Osobowy_Click(object sender, EventArgs e)
         {
-           // Zaparkuj(sender, new Osobowy());
+           Zaparkuj(sender, new Osobowy());
         }
 
         void Zaparkuj(object sender, Samochod wybranySamochod)

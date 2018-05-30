@@ -57,6 +57,12 @@
     <Compile Include="GlowneOkno.Designer.cs">
       <DependentUpon>GlowneOkno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Osobowy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Osobowy.Designer.cs">
+      <DependentUpon>Osobowy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Parametry.cs" />
     <Compile Include="Parking.cs" />
     <Compile Include="Program.cs" />
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GlowneOkno.resx">
       <DependentUpon>GlowneOkno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Osobowy.resx">
+      <DependentUpon>Osobowy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

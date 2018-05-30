@@ -38,6 +38,7 @@
             this.zaladunekTB.Name = "zaladunekTB";
             this.zaladunekTB.Size = new System.Drawing.Size(100, 20);
             this.zaladunekTB.TabIndex = 3;
+            this.zaladunekTB.Text = "10";
             // 
             // zaladunekTxt
             // 
@@ -52,7 +53,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(284, 361);
             this.Controls.Add(this.zaladunekTxt);
             this.Controls.Add(this.zaladunekTB);
             this.Name = "Ciezarowy";
